@@ -5,7 +5,7 @@
     <ng-container *ngFor="let release of data.news">
       <div class="col-xs-4 release">
         <h3>{{release.title}}</h3>
-        <p>{{release.published}}</p>
+        <p>{{release.published | date:'short'}}</p>
       </div>
     </ng-container>
   </div>
