@@ -1,10 +1,21 @@
 import { Component } from '@angular/core';
+import { Http, Response } from "@angular/http";
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
+
 export class AppComponent {
-  title = 'app';
+  private apiUrl = "https://www.stellarbiotechnologies.com/media/press-releases/json";
+
+  constructor(private http: Http) {
+    this.getPressReleases();
+  }
+
+  getPressReleases() {
+    return this.http.get(this.apiUrl)
+      .subscribe((res: Response) => console.log(res));
+  }
 }
