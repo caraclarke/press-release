@@ -9,6 +9,7 @@ import { Http, Response } from "@angular/http";
 
 export class AppComponent {
   private apiUrl = "https://www.stellarbiotechnologies.com/media/press-releases/json";
+  data: any = {};
 
   constructor(private http: Http) {
     this.getPressReleases();
@@ -16,6 +17,8 @@ export class AppComponent {
 
   getPressReleases() {
     return this.http.get(this.apiUrl)
-      .subscribe((res: Response) => console.log(res));
+      .subscribe((res: Response) => {
+        this.data = res.json()
+      });
   }
 }
