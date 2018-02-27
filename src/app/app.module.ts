@@ -1,10 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from "@angular/forms";
-import { HttpModule } from "@angular/http";
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-
+import { ReleaseDataService } from './release-data.service';
 
 @NgModule({
   declarations: [
@@ -13,7 +13,7 @@ import { AppComponent } from './app.component';
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpClientModule
   ],
   providers: [AppComponent],
   bootstrap: [AppComponent]
