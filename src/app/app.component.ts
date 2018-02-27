@@ -9,7 +9,10 @@ import { DatePipe } from '@angular/common';
 })
 
 export class AppComponent {
-  private apiUrl = "https://www.stellarbiotechnologies.com/media/press-releases/json";
+  private apiUrl = "https://www.stellarbiotechnologies.com/media/press-releases/json?limit=5";
+  // limit is number of data items called at once
+  // offset is where the call starts from so 0 is beginning, 3 is starting at 4th options etc.
+
   data: any = {};
 
   constructor(private http: Http) {
