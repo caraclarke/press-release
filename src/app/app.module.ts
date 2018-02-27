@@ -15,7 +15,9 @@ import { ReleaseDataService } from './release-data.service';
     FormsModule,
     HttpClientModule
   ],
-  providers: [AppComponent],
+  providers: [
+    ReleaseDataService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
