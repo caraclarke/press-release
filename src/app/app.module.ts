@@ -5,6 +5,7 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { ReleaseDataService } from './release-data.service';
+import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import { ReleaseDataService } from './release-data.service';
   imports: [
     BrowserModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    InfiniteScrollModule
   ],
   providers: [
     ReleaseDataService

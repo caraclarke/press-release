@@ -1,3 +1,23 @@
 .release {
-  border: 1px solid black;
+  min-height: 220px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  margin-bottom: 24px;
+  border-radius: 5px;
+  max-width: 400px;
+  margin-right: 0;
+
+  &:hover,
+  &:active,
+  &:focus {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  }
+
+  @media (min-width: 768px) {
+    margin-right: 45px;
+  }
+
+  .container {
+    padding: 2px 0;
+  }
 }
