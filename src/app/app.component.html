@@ -1,7 +1,11 @@
 <div class="col-xs-12">
   <h1>Press Release</h1>
 
-  <div class="col-xs-12 release-container" scrollable>
+  <div class="col-xs-12 release-container"
+    infiniteScroll
+    [infiniteScrollDistance]="2"
+    [infiniteScrollThrottle]="50"
+    (scrolled)="onScroll()">
     <ng-container *ngFor="let release of data">
       <div class="col-xs-12 col-md-6 release">
         <div class="container col-xs-12">

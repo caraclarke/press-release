@@ -11,14 +11,21 @@ import { ReleaseDataService } from './release-data.service';
 
 export class AppComponent {
   data: any = [];
-  currentPage: number = 1;
+  currentOffset: number = 0;
 
   constructor(private dataService: ReleaseDataService, public el: ElementRef) {
     this.getPressReleases();
   }
 
   getPressReleases() {
-    this.dataService.getPressReleaseData()
-      .subscribe(release => this.data.push(...release.news) );
+    this.dataService.getPressReleaseData( this.currentOffset )
+      .subscribe(release => {
+        this.currentOffset += 11;
+        this.data.push(...release.news);
+      });
+  }
+
+  onScroll () {
+    this.getPressReleases();
   }
 }
