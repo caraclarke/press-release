@@ -2,6 +2,7 @@ import { Component, ElementRef } from '@angular/core';
 import { Http, Response } from "@angular/http";
 import { DatePipe } from '@angular/common';
 import { ReleaseDataService } from './release-data.service';
+import { PressRelease } from './press-release';
 
 @Component({
   selector: 'app-root',
@@ -10,7 +11,7 @@ import { ReleaseDataService } from './release-data.service';
 })
 
 export class AppComponent {
-  data: any = [];
+  data: Array<PressRelease> = [];
   currentOffset: number = 0;
 
   constructor(private dataService: ReleaseDataService, public el: ElementRef) {
@@ -19,7 +20,7 @@ export class AppComponent {
 
   getPressReleases() {
     this.dataService.getPressReleaseData( this.currentOffset )
-      .subscribe(release => {
+      .subscribe( release => {
         this.currentOffset += 11;
         this.data.push(...release.news);
       });

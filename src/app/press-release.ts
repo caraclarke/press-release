@@ -1,4 +1,4 @@
 export class PressRelease {
-  title: string;
+  title: string,
   releaseDate: string;
 }
