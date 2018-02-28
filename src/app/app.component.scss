@@ -1,3 +1,42 @@
+// variables
+$color-neutral: #EFEFEF;
+$color-carbon: #A9A9A9;
+$color-watermelon: #FF3B3F;
+$color-sky: #CAEBF2;
+$color-black: #000;
+
+// style rules
+.media-container {
+  font-family: sans-serif;
+  color: $color-black;
+
+  .date {
+    color: $color-watermelon;
+  }
+
+  .media-header {
+    border-bottom: 3px solid $color-sky;
+    padding-bottom: 8px;
+    margin-bottom: 16px;
+
+    h1 {
+      color: $color-carbon;
+    }
+
+    .fake-link,
+    .email {
+      color: $color-watermelon;
+      text-decoration: none;
+
+      &:hover,
+      &:focus {
+        text-decoration: underline;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
 .release {
   min-height: 220px;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
@@ -20,4 +59,9 @@
   .container {
     padding: 2px 0;
   }
+}
+
+.fake-link {
+  text-decoration: underline;
+  color: blue;
 }

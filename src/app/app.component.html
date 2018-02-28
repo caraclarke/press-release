@@ -1,5 +1,8 @@
-<div class="col-xs-12">
-  <h1>Press Release</h1>
+<div class="col-xs-12 media-container">
+  <div class="media-header">
+    <h1>Stellar Biotechnologies Media Center</h1>
+    <p>Thank you for visiting the press release media center for Stellar Biotechnologies. Feel free to contact us with any questions at <span class="email">sbmedia@stellarbio.com</span> or visit our <span class="fake-link">press center</span>.</p>
+  </div>
 
   <div class="col-xs-12 release-container"
     infiniteScroll
@@ -10,7 +13,7 @@
       <div class="col-xs-12 col-md-6 release">
         <div class="container col-xs-12">
           <h3>{{ release.title }}</h3>
-          <p class="align-text-top">{{ release.published | date }}</p>
+          <p class="date align-text-top">{{ release.published | date }}</p>
         </div>
       </div>
     </ng-container>
