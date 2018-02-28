@@ -1,8 +1,8 @@
 <div class="col-xs-12">
   <h1>Press Release</h1>
 
-  <div class="col-xs-12">
-    <ng-container *ngFor="let release of data.news">
+  <div class="col-xs-12 release-container" scrollable>
+    <ng-container *ngFor="let release of data">
       <div class="col-xs-12 col-md-6 release">
         <div class="container col-xs-12">
           <h3>{{ release.title }}</h3>
