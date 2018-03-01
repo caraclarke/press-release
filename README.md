@@ -4,8 +4,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 This project uses Angular5 to displays the titles and publish dates of the news articles returned from the JSON API located at [Stellar Biotechnologies](http://www.stellarbiotechnologies.com/media/press-releases/json). The page initially displays 10 articles and as the user scrolls, adds 10 more articles at a time.
 
-I chose to use Angular5 for this project for several reasons. First, when I was examining the requirements and looks at the API, I was struck by how services, pipes and directives could be used to work with this data and manipulate it. I still could have used AngularJS, but prefer the ability to use types and the better error messaging in Angular5. React paired with a state handler like Redux could have also worked for this project, but I felt the learning curve would have to change too quickly for the amount of time I had.
-
+When deciding on what framework to use for this project, it came down to a library vs. framework decision. React is a library, meaning I would have also had to make decisions about what supporting libraries I needed and wanted to use. However with Angular5 those decisions had been made, I was familiar with it and I enjoy employing TypeScript in my project. I think this project is flexible enough that any of the multitude of JS frameworks and libaries could work for it but the time I had to complete the project in also played into the decision. It was easier to go with a framework, Angular5, that I was already familiar with instead of adding additional learnng time to the time I had to work on the project.
 
 ### Main files
 
