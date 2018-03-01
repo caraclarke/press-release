@@ -2,26 +2,15 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.6.5.
 
-## Development server
+This project uses Angular5 to displays the titles and publish dates of the news articles returned from the JSON API located at [Stellar Biotechnologies](http://www.stellarbiotechnologies.com/media/press-releases/json). The page initially displays 10 articles and as the user scrolls, adds 10 more articles at a time.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+I chose to use Angular5 for this project for several reasons. First, when I was examining the requirements and looks at the API, I was struck by how services, pipes and directives could be used to work with this data and manipulate it. I still could have used AngularJS, but prefer the ability to use types and the better error messaging in Angular5. I also chose Angular5 over React because I was more familiar with it and knew that I would have to add something to handle state changes like Redux.
 
-## Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### Main files
 
-## Build
+`src/app/app.component.ts`: This component and its template get the data from the service calling the API, push it into a local array and control the offset paramater that it passes to the function in the service making the call to the API. 
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+`src/app/release-data.service.ts`: This service calls the API. Using limit it requests 10 responses at a time. It also uses offset, which is passed from the component, to get the next 10 articles after the initial page load which displays the first 10.
 
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+`node_modules/ngx-infinite-scroll`: This is an [imported infinite scroll directive](https://github.com/orizens/ngx-infinite-scroll) for Angular4 and above. By using it to track how far the user has scrolled down the page, I am able to call the function that makes a request to the service with the proper offset and get the next set of articles.
