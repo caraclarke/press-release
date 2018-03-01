@@ -3,6 +3,7 @@ import { Http, Response } from "@angular/http";
 import { DatePipe } from '@angular/common';
 import { ReleaseDataService } from './release-data.service';
 import { PressRelease } from './press-release';
+import { ApiResult } from './api-result';
 
 @Component({
   selector: 'app-root',
@@ -20,7 +21,7 @@ export class AppComponent {
 
   getPressReleases() {
     this.dataService.getPressReleaseData( this.currentOffset )
-      .subscribe( release => {
+      .subscribe( ( release: ApiResult ) => {
         this.currentOffset += 11;
         this.data.push(...release.news);
       });
